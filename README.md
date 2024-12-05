@@ -1,1 +1,1 @@
-# Internal Meditab Blog App
+# KM Blog App

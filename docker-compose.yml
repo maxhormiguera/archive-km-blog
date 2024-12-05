@@ -1,0 +1,39 @@
+version: '3'
+
+networks:
+  blog-network:
+    driver: bridge
+
+services:
+  client:
+    container_name: internal-meditab-client
+    restart: always
+    build: ./client
+    ports:
+      - 8080:8080
+    networks:
+      - blog-network
+
+  server:
+    container_name: internal-meditab-server
+    restart: always
+    build: ./server
+    ports:
+      - 4000:4000
+    networks:
+      - blog-network
+  # redis:
+  #   image: bitnami/redis:5.0
+  #   environment:
+  #     # ALLOW_EMPTY_PASSWORD is recommended only for development.
+  #     - REDIS_PASSWORD=welcome@123
+  #     - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+  #   ports:
+  #     - 6379:6379
+  #   # volumes:
+  #   #   - 'redis_data:/bitnami/redis/data'
+  #   networks:
+  #     - blog-network
+# volumes:
+#   redis_data:
+#     driver: local

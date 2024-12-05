@@ -1,0 +1,77 @@
+.codex-editor
+  border-color $color-base
+.codex-editor__redactor
+  padding-bottom 50px !important
+.ce-block__content, .ce-toolbar__content
+  max-width unset
+.ce-block
+  margin 0 -0.7em
+  padding 0 0.7em
+  transition background 1.4s
+  &:hover
+    background-color $color-base
+    gradient-color horizontal, alpha($color-accent1, 10%) 0%, $color-base 5%, $color-base 95%, alpha($color-accent1, 10%) 100%
+.ce-block--focused
+  background-color $color-base
+.ce-settings__default-zone:not(:empty), .ce-settings__plugin-zone:not(:empty)
+  padding 0
+
+
+.article
+  position relative
+  width 100%
+  .__tools
+    position fixed false 10% 30px
+    flexbox center
+    background-color alpha($color-base-off, 40%)
+    border 1px solid $color-border-grey
+    border-radius 4px
+    padding 0.4em 0.6em
+    opacity 0.5
+    transform scale(0.85)
+    transition transform 0.4s, opacity 0.4s
+    z-index 2
+    &:hover
+      opacity 1
+      transform scale(1)
+    .__btn, .__separator
+      &:not(:last-child)
+        margin-right 0.6em
+    .__separator
+      align-self stretch
+      width 1px
+      border-left 1px solid $color-border-grey
+
+.__header-edit
+  margin 0 -0.7rem
+  .__edit-title
+    background-color $color-base-off
+    border none
+    border-radius 0
+    color $color-accent1
+    font-size 1.45em
+    font-weight bold
+    outline none
+    width 100%
+    &:focus
+      background-color $color-base
+  .__edit-title, .__title, .__edit-description
+    padding 0.5em 0.7rem
+    width 100%
+    &:hover
+      background-color $color-base
+      gradient-color horizontal, alpha($color-accent1, 10%) 0%, $color-base 5%, $color-base 95%, alpha($color-accent1, 10%) 100%
+  .__edit-category
+    flexbox center
+    padding 0 0.7em 40px
+      .multiselect
+        position absolute 0
+  .__edit-description
+    background-color $color-base-off
+    border none
+    border-radius 0
+    margin 0.5em 0
+    max-height unset
+    &:focus
+      background-color $color-base
+      outline none
